@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="Description" content="The Ghost Tour is an online tenball pool tournament.  Players purchase a ticket and then live stream themselves as a submission. ">
+    <meta name="Keywords" content="Online Pool Tournament, online pool tournament, The Ghost Tour, the ghost tour, Virtual Pool Tournament, virtual pool tournament, Pool Tournament, pool tournament, Chris Woodrum, chris woodrum">
+    <link id="base-css" href="base.css" rel="stylesheet" type="text/css">
+    <title>The Ghost Tour</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/3.9.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <!--
+    <script defer src="/__/firebase/3.9.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/3.9.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/3.9.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/3.9.0/firebase-storage.js"></script> -->
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>This is the Ghost Tour</h1>
+      <p> This site will be hosting monthly online pool tournaments. <br>
+        All players will have a handicap because you're not perfect,
+        but the ghost is!!<br>
+        There will be 4 tournaments that will run all month. <br>
+        There will be a tournament for 7’, 8’ and 9’ tables.<br>
+        There will also be an open tournament for any size table and will have no handicap. <br>
+        This will be real pool, real players, real entry fees and real payouts. <br>
+        More info will be released soon. Look us up on facebook under 10ball.org. <br>
+        If you have any questions feel free to send us a message there.</p>
+      <!--<a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a> -->
+    </div>
+    <div id="page-content"></div>
+    <div id="footer"></div>
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var config = {
+          apiKey: "AIzaSyAp0QY3M1N9YH8NARa9O0CPbAF1zuKbTlQ",
+          authDomain: "tenball-cfce8.firebaseapp.com",
+          databaseURL: "https://tenball-cfce8.firebaseio.com",
+          projectId: "tenball-cfce8",
+          storageBucket: "tenball-cfce8.appspot.com",
+          messagingSenderId: "759976399907"
+        };
+        firebase.initializeApp(config);
+        try {
+          let app = firebase.app();
+          //let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+          //document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          //onsole.error(e);
+          //document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+    <script src="../src/helper_functions.js"></script>
+    <script>
+      helper.loadTemplate('header', 'modules', 'header');
+    </script>
+  </body>
+</html>
