@@ -22,19 +22,6 @@ var helper = {};
   exports.domReady = domReady;
 })(window, document);
 
-// WEB-8897
-// adding this because at this time, momentjs doesn't support dates for these locales:
-// 'gu-IN', 'kn-IN', 'mn-MN', 'no-NO', 'tg-TJ', 'tk-TM', 'ur'
-// this is generalized in case more unsupported
-// locales are added
-
-helper.isLocaleSupported = function(userLang) {
-  var localeShortMonths = [];
-  var filter = (_User.lang.split('-')[0] || _User.lang).toLowerCase();
-  // if moment doesn't support a locale, it will return the
-  //current locale instead of trying to change it
-  return (moment.locale(filter) === filter);
-};
 
 helper.isInViewport = function(el){
   if (!el) {
@@ -116,7 +103,7 @@ helper.loadTemplateWithClass = function(elementId, type, name){
 };
 
 helper.loadTemplate = function(elementId, type, name){
-  var path = '/src/templates/' + type + '/' + name + '/' + name + '.html';
+  var path = '../src/templates/' + type + '/' + name + '/' + name + '.html';
   var xhr = typeof XMLHttpRequest !== 'undefined' ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
   xhr.open('get', path, true);
   xhr.onreadystatechange = function() {
@@ -126,7 +113,7 @@ helper.loadTemplate = function(elementId, type, name){
       var script = document.createElement('script');
       var fileName = name + '/' + name + '.js';
       script.type = 'text/javascript';
-      script.src = '/src/templates/' + type + '/' + fileName;
+      script.src = '../src/templates/' + type + '/' + fileName;
 
       // Then bind the event to the callback function.
       // There are several events for cross browser compatibility.

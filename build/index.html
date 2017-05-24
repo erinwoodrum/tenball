@@ -21,7 +21,7 @@
     <script defer src="/__/firebase/init.js"></script>
   </head>
   <body>
-    <div id="header"></div>
+    <div id="headerContainer"></div>
     <div id="message">
       <h2>Welcome</h2>
       <h1>This is the Ghost Tour</h1>
@@ -38,6 +38,10 @@
     </div>
     <div id="page-content"></div>
     <div id="footer"></div>
+    <script src="../src/helper_functions.js"></script>
+    <script>
+      helper.loadTemplate('headerContainer', 'modules', 'header'); 
+    </script>
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
