@@ -9,11 +9,12 @@ light-gray: #c0c0c0;
 */
 body { border-top: 16px solid #ffa100; background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
 .page-row{ width: calc(100% - 20px); padding: 10px; }
+.page-padding{padding: 15px;}
 .bg-dark-gray{background-color: #212121}
 .bg-light-gray{background-color: #c0c0c0}
 .shadow-light-blue{box-shadow: 0 1px 3px #00aaef;}
 .text-dark{color:#212121;}
-
+.centered{text-align:center;}
 
 #message { background: white; max-width: 360px; margin: 50px auto 16px; padding: 32px 24px; border-radius: 3px; }
 #message h2 { color: #00aaef; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
