@@ -17,13 +17,21 @@ gulp.task('sass:watch', function () {
   gulp.watch('./sass/**/*.scss', ['sass']);
 });
 
+
 gulp.task('webserver', function() {
-    gulp.src('')
+    gulp.src('./build')
       .pipe(webserver({
-          livereload: false,
+          livereload: true,
           port: 5001,
           open: true,
-          // https: true,
-          fallback : 'index.html'
+          fallback : './build/index.html'
       }));
 });
+
+/*
+host: '0.0.0.0',
+      port: 6639,
+      livereload: true,
+      open: true,
+      fallback: './dist/index.html'
+*/
