@@ -9,7 +9,7 @@ light-gray: #c0c0c0;
 */
 body { border-top: 16px solid #ffa100; background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
 .page-row{ width: calc(100% - 20px); padding: 10px; }
-.page-padding{padding: 15px;}
+.page-padding{padding: 15px; max-width: 600px; margin: 0 auto;}
 .bg-dark-gray{background-color: #212121}
 .bg-light-gray{background-color: #c0c0c0}
 .shadow-light-blue{box-shadow: 0 1px 3px #00aaef;}
