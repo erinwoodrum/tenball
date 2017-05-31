@@ -1,0 +1,20 @@
+.signup-form {
+	margin: 20px 0;
+}
+.signup-form label{
+	
+}
+
+.signup-form input{
+	width: 100%;
+    margin: 10px 0 15px;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.signup-form .sublabel {
+	color: #c0c0c0;
+    font-size: 8px;
+    margin-top: 5px;
+}

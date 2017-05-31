@@ -35,8 +35,9 @@
 
 .button-container {
 	display: inline-block;
-    width: calc(100% - 315px);
+    width: 100%;
     text-align: right;
+    min-width: 195px;
 }
 
 .button-container button {
@@ -49,4 +50,10 @@
     color: aliceblue;
     border: none;
     cursor: pointer;
+}
+
+@media screen and (min-width: 520px) {
+    .button-container{
+        width: calc(100% - 315px);
+    }
 }
