@@ -7,7 +7,8 @@ light-gray: #c0c0c0;
 /*
   Temp message styles.
 */
-body { border-top: 16px solid #ffa100; background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+body{ height: 100%; border-top: 16px solid #ffa100; background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+html{ height: 100%; }
 .page-row{ width: calc(100% - 20px); padding: 10px; }
 .page-padding{padding: 15px; max-width: 600px; margin: 0 auto;}
 .bg-dark-gray{background-color: #212121}
@@ -26,6 +27,10 @@ body { border-top: 16px solid #ffa100; background: #ECEFF1; color: rgba(0,0,0,0.
 
 .main-header{
   text-align:center;
+}
+
+#page-content {
+	min-height:100%;
 }
 
 .info{
