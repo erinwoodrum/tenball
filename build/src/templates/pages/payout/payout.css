@@ -1,0 +1,23 @@
+.payout-page table {
+	display: inline-block;
+    width: 170px;
+    height: 150px;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.payout-page table th {
+	text-align: center;
+	width: 170px;
+	padding: 5px;
+}
+
+.payout-page table td {
+	text-align: center;
+}
+
+.payout-page table.space-right {
+	margin-right: 10px;
+}

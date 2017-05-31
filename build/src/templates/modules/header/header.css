@@ -1,0 +1,31 @@
+.logo{    
+	height: 45px;
+    float: left;
+    margin: 19px 10px 10px 10px;
+}
+.header-title{
+	font-family: 'Alegreya SC';
+}
+.nav-link-container{
+	text-align: center; 
+	padding: 15px;
+	box-shadow: 0 4px 2px -2px #00aaee;
+}
+.nav-link{
+	font-family: 'Alegreya SC';
+	text-align: right;
+    text-decoration: none;
+    color: aliceblue;
+    padding: 10px;
+    margin: 10px 5px;
+    cursor: pointer;
+    line-height: 32px;
+}
+.nav-link.active{
+	color:#212121;
+	background-color: aliceblue;
+	border-radius: 50%;
+}
+.nav-link:hover{
+	color:#00aaef;
+}
