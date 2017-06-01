@@ -8,15 +8,16 @@
     <meta name="Keywords" content="Online Pool Tournament, online pool tournament, The Ghost Tour, the ghost tour, Virtual Pool Tournament, virtual pool tournament, Pool Tournament, pool tournament, Chris Woodrum, chris woodrum">
     <link id="base-css" href="base.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Alegreya SC' rel='stylesheet'>
-    <link rel="icon" href="img/pool_11_ellipse.png" type="image/x-icon" />
+     <link rel="icon" href="img/pool_11_ellipse.png" type="image/x-icon" /> 
     <title>The Ghost Tour</title>
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/4.0.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/4.0.0/firebase-database.js"></script>
     <!-- include only the Firebase features as you need -->
     <!--
     <script defer src="/__/firebase/4.0.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/4.0.0/firebase-database.js"></script>
+    
     <script defer src="/__/firebase/4.0.0/firebase-messaging.js"></script>
     <script defer src="/__/firebase/4.0.0/firebase-storage.js"></script> -->
     <!-- initialize the SDK after all desired features are loaded -->
@@ -49,6 +50,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
     <script>
+      var database = {}; 
       document.addEventListener('DOMContentLoaded', function() {
         var config = {
           apiKey: "AIzaSyAp0QY3M1N9YH8NARa9O0CPbAF1zuKbTlQ",
@@ -59,8 +61,10 @@
           messagingSenderId: "759976399907"
         };
         firebase.initializeApp(config);
+        
         try {
           let app = firebase.app();
+          database = firebase.database(); 
           //let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
           //document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
         } catch (e) {
@@ -69,6 +73,9 @@
         }
       });
     </script>
+    <script src="./src/user.js"></script>
     <script src="./src/router.js"></script>
+    <script src="./src/md5.min.js"></script>
+    
   </body>
 </html>

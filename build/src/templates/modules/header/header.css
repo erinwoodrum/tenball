@@ -24,11 +24,13 @@
     line-height: 32px;
     white-space: nowrap;
 }
+
 .nav-link.active{
 	color:#212121;
 	background-color: aliceblue;
 	border-radius: 50%;
 }
+
 .nav-link:hover{
 	color:#00aaef;
 }

@@ -1,3 +1,7 @@
+h2 {
+    margin-bottom: 30px;
+}
+
 .signup-form {
 	margin: 20px 0;
 }
@@ -7,7 +11,7 @@
 
 .signup-form input{
 	width: 100%;
-    margin: 10px 0 15px;
+    margin: 10px 0 5px;
     font-size: 16px;
     padding: 5px;
     border-radius: 3px;
@@ -17,4 +21,37 @@
 	color: #c0c0c0;
     font-size: 8px;
     margin-top: 5px;
+}
+.signup-form input.error{
+    border: 1px solid red;
+}
+
+.submit-button {
+    height: 40px;
+    width: calc(100% + 12px);
+    font-weight: bold;
+    padding: 0 16px;
+    font-size: 16px;
+    margin-left: 10px;
+    background-color: #00aaef;
+    color: aliceblue;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.spaced {
+    margin: 30px 0;
+}
+
+.info-box {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.error-message {
+    font-size: 8px;
+    color: red;
+    margin-bottom: 15px;
 }
