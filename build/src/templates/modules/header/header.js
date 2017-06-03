@@ -9,7 +9,7 @@ if(currHash && currHash.length > 0 && pages.indexOf(currHash) > -1){
 
 var loginContainer = document.getElementsByClassName('login-container')[0]; 
 var loggedInContainer = document.getElementsByClassName('logged-in-container')[0]; 
-if(user.data.displayname){
+if(user.data && user.data.displayname){
 	//User IS logged in. 
 	loginContainer.style.display = 'none'; 
 	loggedInContainer.style.display = 'inline-block'; 
