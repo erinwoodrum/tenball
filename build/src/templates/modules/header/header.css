@@ -1,19 +1,28 @@
-.logo{    
+.header-left-side {
+    display: inline-block;
+}
+.logo {    
 	height: 45px;
     float: left;
     margin: 19px 10px 10px 10px;
 }
-.header-title{
+.header-title {
 	font-family: 'Alegreya SC';
 	display: inline-block;
+    margin: 17px 0;
 }
-.nav-link-container{
+.sub-title {
+    opacity: 0.6;
+    font-size: 12px;
+    margin: 0px 0 10px 15px;
+}
+.nav-link-container {
 	text-align: center; 
 	padding: 15px;
 	width: calc(100% - 30px);
 	box-shadow: 0 4px 2px -2px #00aaee;
 }
-.nav-link{
+.nav-link {
 	font-family: 'Alegreya SC';
 	text-align: right;
     text-decoration: none;
@@ -25,7 +34,7 @@
     white-space: nowrap;
 }
 
-.nav-link.active{
+.nav-link.active {
 	color:#212121;
 	background-color: aliceblue;
 	border-radius: 50%;
@@ -56,6 +65,6 @@
 
 @media screen and (min-width: 520px) {
     .button-container{
-        width: calc(100% - 315px);
+        width: calc(100% - 320px);
     }
 }

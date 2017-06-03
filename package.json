@@ -9,6 +9,7 @@
   "author": "Erin Cook",
   "license": "ISC",
   "dependencies": {
+    "firebaseui": "^2.0.0",
     "underscore": "^1.8.3"
   },
   "devDependencies": {

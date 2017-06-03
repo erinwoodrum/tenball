@@ -1,11 +1,19 @@
+<script src="node_modules/firebaseui/dist/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="node_modules/firebaseui/dist/firebaseui.css" />
 <link rel="stylesheet" type="text/css" href="/src/templates/pages/signup/signup.css">
+
+
 <div class="page-padding">
 <h2>Become a player! Then purchase a ticket. </h2>
 
 <!--(TODO:  create a purchase tickets page. ); -->
 
 <div class="third-party-button-container">
-<button>Sign up with Facebook</button>
+<button onclick="signupWithGoogle()"> Sign Up with Google</button>
+<fb:login-button 
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button>
 <button>Sign up with Twitter</button>
 ... 
 </div>
