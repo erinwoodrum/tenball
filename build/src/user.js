@@ -2,7 +2,6 @@ var user = {};
 if(localStorage.user){
 	user.data = JSON.parse(localStorage.user); 
 }
-console.log('in user,', user); 
 
 user.addNew = function(data){
 	user.data = data; 
