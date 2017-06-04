@@ -55,3 +55,14 @@ h2 {
     color: red;
     margin-bottom: 15px;
 }
+
+.third-party-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.third-party-button .facebook-img {
+    margin-bottom: 2px;
+    height: 40px;
+}

@@ -5,7 +5,7 @@ var getElement = function(id){
 //On Load
 var fields = ['email', 'firstname', 'lastname', 'phone'];
 
-getElement('displayname').innerHTML = user.data.displayname;
+getElement('displayname').innerHTML = _User.data.displayname;
 for(var x=0; x < fields.length; x++){
-	getElement(fields[x]).value = user.data[fields[x]]; 
+	getElement(fields[x]).value = _User.data[fields[x]]; 
 } 

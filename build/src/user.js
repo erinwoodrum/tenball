@@ -1,19 +1,17 @@
-var user = {}; 
+var _User = {}; 
 if(localStorage.user){
-	user.data = JSON.parse(localStorage.user); 
+	_User.data = JSON.parse(localStorage.user); 
 }
 
-user.addNew = function(data){
-	user.data = data; 
+_User.addNew = function(data){
+	_User.data = data; 
 	localStorage.user = JSON.stringify(data); 
-	var key = firebase.database().ref().child('users').push().key;
-    user.data.key = key; 
-	return database.ref('users/' + key).set({
+	//var key = firebase.database().ref().child('users').push().key;
+	return database.ref('users/' + data.key).set({
     displayname: data.displayname,
     email: data.email,
     firstname: data.firstname, 
     lastname: data.lastname, 
-    password: data.password,
     phone: data.phone,
     profile_picture : data.profile_picture, 
     street1: data.street1, 

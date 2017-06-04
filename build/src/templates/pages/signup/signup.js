@@ -2,46 +2,65 @@ function signupWithGoogle() {
 	var googleProvider = new firebase.auth.GoogleAuthProvider();
 
 	firebase.auth().signInWithPopup(googleProvider).then(function(result) {
+		debugger; 
   		// This gives you a Google Access Token. You can use it to access the Google API.
   		var token = result.credential.accessToken;
-  		// The signed-in user info.
   		var userData = result.user;
-  		console.log('the user: ', user); 
-  		user.data.displayname = userData.displayName; 
-  		user.data.email = userData.email; 
-  		localStorage.user = JSON.stringify(user.data); 
-  		router.changePage('currentUser'); 
+  		var createProfile = _User.addNew({
+			key: userData.uid,
+			displayname: userData.displayName,
+	    	email: userData.email,
+	    	firstname: '', 
+	    	lastname: '', 
+	    	phone: '',
+	    	profile_picture : userData.photoURL, 
+	    	street1: '', 
+	    	street2: '',
+	    	city: '', 
+	    	state: '', 
+	    	zip: '', 
+	    	country: ''
+		}).then(function(data){
+			changeLoginStatus(); 
+			router.changePage('currentUser'); 
+		}); 
   			// ...
 }).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
+	debugger; 
   var errorMessage = error.message;
-  // The email of the user's account used.
-  var email = error.email;
-  // The firebase.auth.AuthCredential type that was used.
-  var credential = error.credential;
-  // ...
+  alert(errorMessage); 
 });	
 }
 
 function signupWithFacebook(){
 	var provider = new firebase.auth.FacebookAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function(result) {
-  // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-  var token = result.credential.accessToken;
-  // The signed-in user info.
-  var userData = result.user;
-  console.log(userData); 
-  // ...
+
+  		var token = result.credential.accessToken;
+  		// The signed-in user info.
+  		var userData = result.user;
+  		debugger; 
+  		var createProfile = _User.addNew({
+			key: userData.uid,
+			displayname: userData.displayName,
+	    	email: userData.email,
+	    	firstname: '', 
+	    	lastname: '', 
+	    	phone: '',
+	    	profile_picture : userData.photoURL, 
+	    	street1: '', 
+	    	street2: '',
+	    	city: '', 
+	    	state: '', 
+	    	zip: '', 
+	    	country: ''
+		}).then(function(data){
+			changeLoginStatus(); 
+			router.changePage('currentUser'); 
+		}); 
 }).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
   var errorMessage = error.message;
-  // The email of the user's account used.
-  var email = error.email;
-  // The firebase.auth.AuthCredential type that was used.
-  var credential = error.credential;
-  // ...
+  alert(errorMessage); 
 });
 }
 
@@ -104,30 +123,37 @@ function signUpUser() {
 		setError('password', "Passwords must contain a special character."); 
 		return;
 	}
-	password += salt;
-	password = md5(password);  
+	//password += salt;
+	//password = md5(password);  
 
 	var phoneNum = getData('phone'); 
 	if(phoneNum.length > 0 && (hasUpperCase(phoneNum) || hasLowerCase(phoneNum))){
 		setError("phone", "Phone Numbers must not have letters."); 
 	}
-	var result = user.addNew({
-		displayname: displayName,
-    	email: email,
-    	firstname: getData('firstname'), 
-    	lastname: getData('lastname'), 
-    	password: password,
-    	phone: phoneNum,
-    	profile_picture : '', 
-    	street1: getData('street1'), 
-    	street2: getData('street2'),
-    	city: getData('city'), 
-    	state: getData('state'), 
-    	zip: getData('zip'), 
-    	country: getData('country')
-	}).then(function(data){
-		router.changePage('currentUser'); 
-	}); 
+	firebase.auth().createUserWithEmailAndPassword(email, password).then(function(result){
+		var createProfile = _User.addNew({
+			key: result.uid,
+			displayname: displayName,
+	    	email: email,
+	    	firstname: getData('firstname'), 
+	    	lastname: getData('lastname'), 
+	    	password: password,
+	    	phone: phoneNum,
+	    	profile_picture : '', 
+	    	street1: getData('street1'), 
+	    	street2: getData('street2'),
+	    	city: getData('city'), 
+	    	state: getData('state'), 
+	    	zip: getData('zip'), 
+	    	country: getData('country')
+		}).then(function(data){
+			changeLoginStatus(); 
+			router.changePage('currentUser'); 
+		}); 
+	}).catch(function(error) {
+  		alert(error.message);   
+	});
+	
 
 
 }
@@ -144,7 +170,7 @@ function clearErrors(){
 }
 
 function getData(id){
-	return document.getElementById(id).value; 
+	return document.getElementById(id).value || ''; 
 }
 
 function setError(id, message){

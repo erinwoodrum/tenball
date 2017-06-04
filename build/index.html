@@ -22,10 +22,12 @@
     <script defer src="/__/firebase/4.0.0/firebase-messaging.js"></script>
     <script defer src="/__/firebase/4.0.0/firebase-storage.js"></script> -->
     <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+   <!-- <script defer src="/__/firebase/init.js"></script> -->
   </head>
   <body>
+  <script src="./src/helper_functions.js"></script>
   <script src="./src/user.js"></script>
+  <script src="./src/router.js"></script>
     <div id="headerContainer"></div>
     <div id="page-content">
       <div id="message">
@@ -40,15 +42,9 @@
           This will be real pool, real players, real entry fees and real payouts. <br>
           More info will be released soon. Look us up on facebook under 10ball.org. <br>
           If you have any questions feel free to send us a message there.</p>
-        <!--<a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a> -->
       </div>
     </div>
     <div id="footer"></div>
-    <script src="./src/helper_functions.js"></script>
-    <script>
-      helper.loadTemplate('headerContainer', 'modules', 'header'); 
-      helper.loadTemplate('footer', 'modules', 'footer'); 
-    </script>
 
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
     <script>
@@ -67,13 +63,18 @@
         try {
           let app = firebase.app();
           database = firebase.database(); 
-          //let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          //document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+          console.log(app); 
+          loadPage(); 
         } catch (e) {
-          onsole.error(e);
-          //document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+          console.error('Error Robinson', e);
         }
       });
+    </script>
+    <script>
+    function loadPage() {
+        helper.loadTemplate('headerContainer', 'modules', 'header'); 
+        helper.loadTemplate('footer', 'modules', 'footer'); 
+    }
     </script>
     <script src="./src/router.js"></script>
     <script src="./src/md5.min.js"></script>
