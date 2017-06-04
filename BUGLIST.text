@@ -1,0 +1,6 @@
+1.  Status: Open. 
+    Title: Redirect needed for www.10ball.org. 
+    Steps to reproduce:  
+      a.  Navigate to www.10ball.org. 
+      expected: A redirect will force the user to 10ball.org. 
+      actual: User is sent to a dead end. 
