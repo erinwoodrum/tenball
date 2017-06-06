@@ -26,7 +26,6 @@ function signupWithGoogle() {
 		}); 
   			// ...
 }).catch(function(error) {
-	debugger; 
   var errorMessage = error.message;
   alert(errorMessage); 
 });	
@@ -39,7 +38,6 @@ function signupWithFacebook(){
   		var token = result.credential.accessToken;
   		// The signed-in user info.
   		var userData = result.user;
-  		debugger; 
   		var createProfile = _User.addNew({
 			key: userData.uid,
 			displayname: userData.displayName,
@@ -76,7 +74,7 @@ function signUpUser() {
 	clearErrors(); 	
 
 	//get each piece of data and validate it.  
-	var displayName = getData('displayname'); 
+	var displayName = helper.getData('displayname'); 
 	if(displayName.length === 0){
 		setError('displayname', 'Must be at least one character long.'); 
 		return;
@@ -85,7 +83,7 @@ function signUpUser() {
 	//".", "#", "$", "[", or "]"
 
 	//TODO:  check for other occurances. 
-	var email = getData('email'); 
+	var email = helper.getData('email'); 
 	if (email.length === 0){
 		setError('email', "Please enter an email address."); 
 		return;
@@ -98,7 +96,7 @@ function signUpUser() {
 		return;
 	}
 	
-	var password = getData('password'); 
+	var password = helper.getData('password'); 
 	if(password.length === 0){
 		setError('password', "Please enter a password."); 
 		return; 
@@ -126,7 +124,7 @@ function signUpUser() {
 	//password += salt;
 	//password = md5(password);  
 
-	var phoneNum = getData('phone'); 
+	var phoneNum = helper.getData('phone'); 
 	if(phoneNum.length > 0 && (hasUpperCase(phoneNum) || hasLowerCase(phoneNum))){
 		setError("phone", "Phone Numbers must not have letters."); 
 	}
@@ -135,17 +133,17 @@ function signUpUser() {
 			key: result.uid,
 			displayname: displayName,
 	    	email: email,
-	    	firstname: getData('firstname'), 
-	    	lastname: getData('lastname'), 
+	    	firstname: helper.getData('firstname'), 
+	    	lastname: helper.getData('lastname'), 
 	    	password: password,
 	    	phone: phoneNum,
 	    	profile_picture : '', 
-	    	street1: getData('street1'), 
-	    	street2: getData('street2'),
-	    	city: getData('city'), 
-	    	state: getData('state'), 
-	    	zip: getData('zip'), 
-	    	country: getData('country')
+	    	street1: helper.getData('street1'), 
+	    	street2: helper.getData('street2'),
+	    	city: helper.getData('city'), 
+	    	state: helper.getData('state'), 
+	    	zip: helper.getData('zip'), 
+	    	country: helper.getData('country')
 		}).then(function(data){
 			changeLoginStatus(); 
 			router.changePage('currentUser'); 
@@ -167,10 +165,6 @@ function clearErrors(){
 	if(errorMessages){
 		errorMessages.innerHTML = ''; 
 	}
-}
-
-function getData(id){
-	return document.getElementById(id).value || ''; 
 }
 
 function setError(id, message){

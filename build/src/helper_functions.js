@@ -403,37 +403,9 @@ helper.getJSON = function (path) {
   });
 };
 
-helper.makeProfileRequest = function(method, url, data) {
-  return new Promise(function (resolve, reject) {
-    var xhr = new XMLHttpRequest();
-    xhr.open(method, url);
-    xhr.withCredentials = true;
-    xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
-    xhr.onload = function () {
-      if (this.status >= 200 && this.status < 300) {
-        var responseObj = xhr.response;
-        try {
-          responseObj = JSON.parse(xhr.response);
-        }
-        catch(err) {}
-        resolve(responseObj);
-      } else {
-        reject({
-          status: this.status,
-          statusText: xhr.statusText
-        });
-      }
-    };
-    xhr.onerror = function () {
-      reject({
-        status: this.status,
-        statusText: xhr.statusText
-      });
-    };
-    var payload = ((typeof data === "object") ? JSON.stringify(data, null, 2) : data);
-    xhr.send(payload);
-  });
-};
+helper.getData = function(id){
+  return document.getElementById(id).value || ''; 
+}
 
 helper.constantJSON = {};
 helper.getConstantJSON = function (name) {
@@ -672,14 +644,3 @@ helper.isChrome = function () {
   });
 };
 
-helper.isSamsungLocale = function() {
-  return new Promise(function (resolve, reject){
-    _Locations.getDefaultLocation().then(function(locations){
-      if (locations[_User.lang] && locations[_User.lang].isSamsungLocale) {
-        resolve(true);
-      } else {
-        resolve(false);
-      }
-    });
-  })
-};

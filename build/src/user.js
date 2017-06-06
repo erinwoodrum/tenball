@@ -22,3 +22,15 @@ _User.addNew = function(data){
     country: data.country
   });
 }; 
+
+_User.logout = function(){
+    firebase.auth().signOut().then(function() {
+        localStorage.user = {}; 
+        _User.data = {}; 
+        changeLoginStatus(); 
+        router.changePage('home'); 
+    }).catch(function(error) {
+      // An error happened.
+      alert(error.message); 
+    });
+}; 

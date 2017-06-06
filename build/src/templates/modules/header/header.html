@@ -1,13 +1,17 @@
 <link rel="stylesheet" type="text/css" href="/src/templates/modules/header/header.css">
 <div class="page-row bg-light-gray">
+	<div class="logged-in-container user-identifier">
+		<a id="displayname" onclick="router.changePage('currentUser')"></a>
+		<a onclick="_User.logout()">Log Out</a>
+	</div>
 	<div class="header-left-side">
 		<img class="logo" src="/img/ghost-960_720.png"/>
 		<h1 class="header-title text-dark">The Ghost Tour</h1>
 		<h4 class="sub-title">Real Pool. Real Money. Real Competition.</h4>
 	</div>
 	<div class="button-container login-container">
-		<button class="login-button">
-			Login
+		<button class="login-button" onclick="router.changePage('login')">
+			Log in
 		</button>
 
 		<button class="login-button" onclick="router.changePage('signup')">

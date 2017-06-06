@@ -16,7 +16,7 @@ html{ height: 100%; }
 .shadow-light-blue{box-shadow: 0 1px 3px #00aaef;}
 .text-dark{color:#212121;}
 .centered{text-align:center;}
-.in-description-link{font-weight:bold; text-decoration: underline; color: #00aaef;}
+.link{font-weight:bold; text-decoration: underline; color: #00aaef; cursor: pointer;}
 #message { background: white; max-width: 360px; margin: 50px auto 16px; padding: 32px 24px; border-radius: 3px; }
 #message h2 { color: #00aaef; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
 #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
