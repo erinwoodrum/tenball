@@ -13,7 +13,7 @@ var loggedInContainer2 = document.getElementsByClassName('logged-in-container')[
 var changeLoginStatus = function(){
   	if(_User && _User.data && _User.data.displayname){
 	//User IS logged in. 
-	document.getElementById('displayname').innerHTML = _User.data.displayname;
+	document.getElementById('displayname-header').innerHTML = _User.data.displayname;
 		loginContainer.style.display = 'none'; 
 		loggedInContainer.style.display = 'inline-block'; 
 		loggedInContainer2.style.display = 'inline-block'; 

@@ -1,5 +1,5 @@
 var _User = {}; 
-if(localStorage.user){
+if(localStorage.user && typeof localStorage.user !== 'string'){
 	_User.data = JSON.parse(localStorage.user); 
 }
 
