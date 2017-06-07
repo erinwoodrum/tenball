@@ -1,0 +1,57 @@
+.subtitle{
+	font-size: 11px;
+    margin-bottom: 40px;
+}
+
+.third-party-button-container {
+	text-align: center;
+}
+
+.third-party-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.third-party-button .facebook-img {
+    margin-bottom: 2px;
+    height: 40px;
+}
+
+.login-form input{
+	width: 100%;
+    margin: 10px 0 5px;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.error-message {
+    font-size: 8px;
+    color: red;
+    margin-bottom: 15px;
+}
+
+.submit-button {
+    height: 40px;
+    width: calc(100% + 12px);
+    font-weight: bold;
+    padding: 0 16px;
+    font-size: 16px;
+    margin-left: 10px;
+    background-color: #00aaef;
+    color: aliceblue;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.password-reset-link{
+	width: calc(100% + 12px);
+    margin: 10px auto;
+    background: transparent;
+    border: none;
+    color: #00aaef;
+    cursor: pointer;
+}

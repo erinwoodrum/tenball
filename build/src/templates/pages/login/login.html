@@ -1,0 +1,36 @@
+<script src="node_modules/firebaseui/dist/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="node_modules/firebaseui/dist/firebaseui.css" />
+<link rel="stylesheet" type="text/css" href="/src/templates/pages/login/login.css">
+<div class="page-padding">
+	<h2>Login to your account.</h2>
+	<p class="subtitle">
+		If you don't yet have one go to the <a class="link" onclick="router.changePage('signup')">Sign up Page</a>
+	</p>
+
+	<div class="third-party-button-container">
+		<button class="third-party-button" onclick="loginWithGoogle()">
+			<img src="https://developers.google.com/identity/images/btn_google_signin_light_normal_web.png"/>
+		</button>
+		<button class="third-party-button" onclick="loginWithFacebook()">
+			<img class="facebook-img" src="/img/FB.png"/>
+		</button>
+	</div>
+
+	 <p class="centered spaced"> - OR - </p>
+
+	 <div class="login-form">
+		 <label for="email">Email</label>
+		 <input type="email" id="email"/>
+		 <div id="email-error" class="error-message"></div>
+
+		 <label for="password">Password</label>
+		 <input type="text" id="password"/>
+		 <div id="password-error" class="error-message"></div>
+
+		 <button class="submit-button" onclick="logIn()">
+			Log in
+		 </button>
+		 <button class="password-reset-link" onclick="sendResetEmail()">Send Password Reset Email</button>
+	 </div>
+
+</div>
