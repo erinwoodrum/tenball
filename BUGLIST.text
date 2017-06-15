@@ -4,3 +4,11 @@
       a.  Navigate to www.10ball.org. 
       expected: A redirect will force the user to 10ball.org. 
       actual: User is sent to a dead end. 
+ 
+2. Login is still not working correctly.
+        
+
+3. Need an general information section.
+     Outline of the site, entry fees, money breakdowns, etc...
+     
+ 
