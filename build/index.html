@@ -63,6 +63,9 @@
         try {
           let app = firebase.app();
           database = firebase.database(); 
+          firebase.auth().onAuthStateChanged(function(user) {
+            _User.supplementLogin(user); 
+          }); 
           loadPage(); 
         } catch (e) {
           console.error('Error Robinson', e);

@@ -1,24 +1,8 @@
 function loggedIn(userData){
-	_User.data = {
-			key: userData.uid,
-			displayname: userData.displayName,
-	    	email: userData.email,
-	    	firstname: '', 
-	    	lastname: '', 
-	    	phone: '',
-	    	profile_picture : userData.photoURL, 
-	    	street1: '', 
-	    	street2: '',
-	    	city: '', 
-	    	state: '', 
-	    	zip: '', 
-	    	country: ''
-		}; 
-		localStorage.user = JSON.stringify(_User.data); 
-		changeLoginStatus(); 
+		_User.supplementLogin(); 
 		router.changePage('ticket');
 }
-function loginWithGoogle() {
+function loginWithGoogle() { debugger; 
 	var googleProvider = new firebase.auth.GoogleAuthProvider();
 
 	firebase.auth().signInWithPopup(googleProvider).then(function(result) {

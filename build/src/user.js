@@ -1,7 +1,4 @@
-var _User = {}; 
-if(localStorage.user && typeof localStorage.user !== 'string'){
-	_User.data = JSON.parse(localStorage.user); 
-}
+var _User = { data : {}}; 
 
 _User.addNew = function(data){
 	_User.data = data; 
@@ -34,3 +31,30 @@ _User.logout = function(){
       alert(error.message); 
     });
 }; 
+_User.updateDataVal = function(key, val){
+    if(val){
+        if(!_User.data[key] || _User.data[key] === ''){
+            _User.data[key] = val; 
+        }
+    }
+}; 
+_User.supplementLogin = function(user){
+        if(user && user.uid){
+            _User.data.email = user.email || ''; 
+            _User.data.displayname = user.displayName || ''; 
+            _User.data.phone = user.phoneNumber || ''; 
+            _User.data.profile_picture = user.photoURL || ''; 
+            firebase.database().ref('/users/' +  user.uid).once('value').then(function(snapshot) {
+                var vals = snapshot.toJSON(); 
+                for(var id in vals){
+                    _User.updateDataVal(id, vals[id]); 
+                }
+            }); 
+        }
+        if(typeof changeLoginStatus !== undefined){
+            changeLoginStatus();  debugger; 
+        }  else {
+            debugger; console.log(typeof changeLoginStatus); 
+        } 
+}; 
+

@@ -11,17 +11,18 @@ var loginContainer = document.getElementsByClassName('login-container')[0];
 var loggedInContainer = document.getElementsByClassName('logged-in-container')[0]; 
 var loggedInContainer2 = document.getElementsByClassName('logged-in-container')[1]; 
 var changeLoginStatus = function(){
-  	if(_User && _User.data && _User.data.displayname){
+  	if(_User && _User.data && _User.data.email){
 	//User IS logged in. 
-	document.getElementById('displayname-header').innerHTML = _User.data.displayname;
+	var userName = _User.data.displayname && _User.data.displayname.length > 1 ? _User.data.displayname : _User.data.email; 
+	document.getElementById('displayname-header').innerHTML = userName;
 		loginContainer.style.display = 'none'; 
 		loggedInContainer.style.display = 'inline-block'; 
 		loggedInContainer2.style.display = 'inline-block'; 
-	} else {
+	} else { 
 		loginContainer.style.display = 'inline-block'; 
 		loggedInContainer.style.display = 'none'; 
 		loggedInContainer2.style.display = 'none'; 
 	}
 };
-changeLoginStatus(); //initialize. 
+changeLoginStatus(); 
 
