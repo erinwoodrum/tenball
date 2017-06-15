@@ -52,9 +52,9 @@ _User.supplementLogin = function(user){
             }); 
         }
         if(typeof changeLoginStatus !== undefined){
-            changeLoginStatus();  debugger; 
+            changeLoginStatus();  
         }  else {
-            debugger; console.log(typeof changeLoginStatus); 
+            console.log(typeof changeLoginStatus); 
         } 
 }; 
 
