@@ -1,4 +1,5 @@
 var _User = { data : {}}; 
+var _Users = {}; 
 
 _User.addNew = function(data){
 	_User.data = data; 
@@ -39,6 +40,7 @@ _User.updateDataVal = function(key, val){
     }
 }; 
 _User.supplementLogin = function(user){
+        _User.getAllUsers(); 
         if(user && user.uid){
             _User.data.email = user.email || ''; 
             _User.data.displayname = user.displayName || ''; 
@@ -57,4 +59,12 @@ _User.supplementLogin = function(user){
             console.log(typeof changeLoginStatus); 
         } 
 }; 
-
+_User.getAllUsers = function(){
+    firebase.database().ref('/users').once('value').then(function(snapshot) {
+        _Users = snapshot.toJSON(); 
+        if(currHash === 'players'){
+            displayPlayers(); 
+        }
+    }); 
+    
+}; 
