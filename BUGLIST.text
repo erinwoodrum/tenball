@@ -5,10 +5,15 @@
       expected: A redirect will force the user to 10ball.org. 
       actual: User is sent to a dead end. 
  
-2. Login is still not working correctly.
+2.  Status: Open.
+    Login is still not working correctly.
         
 
-3. Need a general information section.
-     Outline of the site, entry fees, money breakdowns, etc...
+3.  Status: Closed.
+    Need a general information section.
+    Outline of the site, entry fees, money breakdowns, etc...
+     
+4.  Status: Open.
+    Players page needs to auto refresh
      
  
