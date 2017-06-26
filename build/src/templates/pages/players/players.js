@@ -1,5 +1,5 @@
 function displayPlayers(){
-	console.log(_Users); 
+	if(!_Users) return; 
 	var pageHTML = ''; 
 	for(var uid in _Users){
 		var player = _Users[uid]; 
@@ -19,6 +19,7 @@ function displayPlayers(){
 	}
 	document.getElementsByClassName('page-contents')[0].innerHTML = pageHTML; 
 }
+displayPlayers(); 
 /*
 <div class="player-container">
 		<div class="player-image-container">
