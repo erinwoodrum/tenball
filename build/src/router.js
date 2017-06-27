@@ -1,6 +1,6 @@
 var router = {}; 
 
-router.changePage = function(pageName){
+router.changePage = function(pageName, queryString){
 	helper.loadTemplate('page-content', 'pages', pageName); 
 	var activeLink = document.querySelector(".nav-link.active"); 
 	if(activeLink) {
@@ -10,17 +10,29 @@ router.changePage = function(pageName){
 	if(newActiveLink) {
 		newActiveLink.classList.add('active'); 
 	}
-	document.location.hash = pageName;
+	if(queryString){
+		document.location.hash = pageName + '?' + queryString; 
+	} else {
+		document.location.hash = pageName;
+	}
 }
 
+var stripQueryString = function(currHash){
+	var locOfQuest = currHash.indexOf('?'); 
+	if(locOfQuest > -1){
+		hash = currHash.substr(0, locOfQuest); 
+		queryString = currHash.substr(locOfQuest + 1); 
+	}
+	return {hash:hash, queryString:queryString}; 
+}; 
 
 //Onload check the url in order to change the page. 
 var pages = ['home', 'tournaments', 'players', 'rules', 'handicap', 'payout', 'signup', 
-	'currentUser', 'ticket', 'login']; 
-var currHash = document.location.hash.replace("#", ""); 
-if(currHash && currHash.length > 0 && pages.indexOf(currHash) > -1){
-	router.changePage(currHash); 
+	'currentUser', 'ticket', 'login', 'playerDetail']; 
+var urlComp = stripQueryString(document.location.hash.replace("#", "")); 
+if(urlComp.hash && urlComp.hash.length > 0 && pages.indexOf(urlComp.hash) > -1){
+	router.changePage(urlComp.hash, urlComp.queryString); 
 } else { 
-	document.getElementById('nav-home').classList.add('active'); //home by default. 
+	alert('error in pagination. '); 
 }
 

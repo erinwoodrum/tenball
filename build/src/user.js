@@ -62,8 +62,12 @@ _User.supplementLogin = function(user){
 _User.getAllUsers = function(){
     firebase.database().ref('/users').once('value').then(function(snapshot) {
         _Users = snapshot.toJSON(); 
+        var currHash = window.location.hash; 
         if(currHash === 'players'){
             displayPlayers(); 
+        }
+        if(currHash.indexOf('playerDetail') > -1){
+            displayPlayer(); 
         }
     }); 
     
