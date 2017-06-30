@@ -1,0 +1,25 @@
+.player-container {
+	background: white;
+	padding: 5px;
+	display: flex;
+	flex-direction: row;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+.left-side-top {
+	width: 150px;
+}
+.right-side-top {
+	width: 100%;
+	min-width: 300px;
+	padding: 18px;
+}
+#displayName {
+	width: 100%;
+	text-align: center;
+}
+#playerImage img{
+	width: 150px;
+	height: auto;
+}
