@@ -60,6 +60,9 @@ _User.supplementLogin = function(user){
         } 
 }; 
 _User.getAllUsers = function(){
+    if(currHash.indexOf('admin') > -1){
+        fillOutTourneys();
+    }
     firebase.database().ref('/users').once('value').then(function(snapshot) {
         _Users = snapshot.toJSON(); 
         var currHash = window.location.hash; 
