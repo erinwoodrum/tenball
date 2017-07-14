@@ -60,9 +60,6 @@ _User.supplementLogin = function(user){
         } 
 }; 
 _User.getAllUsers = function(){
-    if(currHash.indexOf('admin') > -1){
-        fillOutTourneys();
-    }
     firebase.database().ref('/users').once('value').then(function(snapshot) {
         _Users = snapshot.toJSON(); 
         var currHash = window.location.hash; 
@@ -74,6 +71,17 @@ _User.getAllUsers = function(){
         }
         if(currHash.indexOf('admin') > -1){
             displayPlayers(); 
+        }
+    }); 
+    _Tournaments = {}; 
+    firebase.database().ref('/tournaments').once('value').then(function(snapshot) {
+        _Tournaments = snapshot.toJSON(); 
+        //now call other functions. 
+        if(currHash.indexOf('admin') > -1){
+            fillOutTourneys();
+        }
+        if(currHash.indexOf('tournaments') > -1){
+            getTourneys(); 
         }
     }); 
     
