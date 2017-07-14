@@ -35,6 +35,6 @@ var urlComp = stripQueryString(document.location.hash.replace("#", ""));
 if(urlComp.hash && urlComp.hash.length > 0 && pages.indexOf(urlComp.hash) > -1){
 	router.changePage(urlComp.hash, urlComp.queryString); 
 } else { 
-	alert('error in pagination. '); 
+	
 }
 

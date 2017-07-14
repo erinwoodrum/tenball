@@ -72,6 +72,20 @@ _User.getAllUsers = function(){
         if(currHash.indexOf('playerDetail') > -1){
             displayPlayer(); 
         }
+        if(currHash.indexOf('admin') > -1){
+            displayPlayers(); 
+        }
     }); 
     
 }; 
+_User.addTicket = function(userid){
+    if(!_Users[userid].tickets){
+        _Users[userid].tickets = 0; 
+    }
+    _Users[userid].tickets ++; 
+    database.ref('users/' + userid).set(_Users[userid]).then(function(result){
+        alert('success!'); 
+    }, function(fail){
+        alert('failure:  ', fail); 
+    }); 
+}
