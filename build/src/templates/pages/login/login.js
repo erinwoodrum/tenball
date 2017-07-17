@@ -2,7 +2,7 @@ function loggedIn(userData){
 		_User.supplementLogin(); 
 		router.changePage('ticket');
 }
-function loginWithGoogle() { debugger; 
+function loginWithGoogle() {
 	var googleProvider = new firebase.auth.GoogleAuthProvider();
 
 	firebase.auth().signInWithPopup(googleProvider).then(function(result) {

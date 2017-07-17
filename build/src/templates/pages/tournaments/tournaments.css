@@ -7,4 +7,36 @@
     border-radius: 3px;
     margin-bottom: 5px;
     cursor: pointer;
+    min-height: 72px;
+    position:relative;
+}
+.tournament-container .data-item{
+	margin: 10px;
+}
+.label{
+	white-space: nowrap; 
+	font-weight: 600; 
+}
+.next-step-button {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+.next-step-phrase {
+	width: 200px;
+    right: 12px;
+    float: right;
+    position: absolute;
+    top: 12px;
+    color: white;
+    padding: 10px;
+}
+.next-step-button {
+    width: 128px;
+    right: 12px;
+    float: right;
+    position: absolute;
+    top: 12px;
+    color: white;
+    padding: 10px;
 }

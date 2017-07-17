@@ -7,12 +7,14 @@ light-gray: #c0c0c0;
 /*
   Temp message styles.
 */
-body{ height: 100%; border-top: 16px solid #ffa100; background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+body{ height: 100%; border-top: 27px groove #00aaef; background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
 html{ height: 100%; }
 .page-row{ width: calc(100% - 20px); padding: 10px; }
 .page-padding{padding: 15px; max-width: 600px; margin: 0 auto;}
 .bg-dark-gray{background-color: #212121}
 .bg-light-gray{background-color: #c0c0c0}
+.light-blue-bg{background-color: #00aaef;}
+.yellow-bg{background-color: #ffa100;}
 .shadow-light-blue{box-shadow: 0 1px 3px #00aaef;}
 .text-dark{color:#212121;}
 .centered{text-align:center;}

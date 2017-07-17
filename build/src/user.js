@@ -39,7 +39,7 @@ _User.updateDataVal = function(key, val){
         }
     }
 }; 
-_User.supplementLogin = function(user){
+_User.supplementLogin = function(user){  console.log(user); 
         _User.getAllUsers(); 
         if(user && user.uid){
             _User.data.email = user.email || ''; 
@@ -47,10 +47,12 @@ _User.supplementLogin = function(user){
             _User.data.phone = user.phoneNumber || ''; 
             _User.data.profile_picture = user.photoURL || ''; 
             firebase.database().ref('/users/' +  user.uid).once('value').then(function(snapshot) {
+                console.log('snapshot', snapshot); 
                 var vals = snapshot.toJSON(); 
                 for(var id in vals){
                     _User.updateDataVal(id, vals[id]); 
                 }
+                changeLoginStatus(); 
             }); 
         }
         if(typeof changeLoginStatus !== undefined){
@@ -63,7 +65,7 @@ _User.getAllUsers = function(){
     firebase.database().ref('/users').once('value').then(function(snapshot) {
         _Users = snapshot.toJSON(); 
         var currHash = window.location.hash; 
-        if(currHash === 'players'){
+        if(currHash.indexOf('players') > -1){
             displayPlayers(); 
         }
         if(currHash.indexOf('playerDetail') > -1){
