@@ -1,4 +1,4 @@
-function getTourneys(){  console.log(_User); 
+function getTourneys(){ 
   if(!window['_Tournaments']) return; 
   var tourneyDiv = document.getElementById('tournaments-container'); 
   var html = ''; 
@@ -15,7 +15,7 @@ function getTourneys(){  console.log(_User);
       '<div class="label">Entries: </div></div>'; 
       
     if(_User.data.tickets && _User.data.tickets > 0){
-      html += '<div class="next-step-button light-blue-bg">Enter Tournament</div></div>'; 
+      html += '<div class="next-step-button light-blue-bg" onclick="router.changePage(\'entry\',\'' + key + '\')">Enter Tournament</div></div>'; 
     } else {
       html += '<div class="next-step-phrase light-blue-bg" onclick="router.changePage(\'ticket\')">' + 
       'Purchase a ticket in order to enter this tournament</div></div>'; 
