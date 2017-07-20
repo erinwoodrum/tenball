@@ -39,7 +39,7 @@ _User.updateDataVal = function(key, val){
         }
     }
 }; 
-_User.supplementLogin = function(user){  console.log(user); 
+_User.supplementLogin = function(user){
         _User.getAllUsers(); 
         if(user && user.uid){
             _User.data.email = user.email || ''; 
@@ -84,6 +84,9 @@ _User.getAllUsers = function(){
         }
         if(currHash.indexOf('tournaments') > -1){
             getTourneys(); 
+        }
+        if(currHash.indexOf('entry') > -1){
+            fillOutTourney(); 
         }
     }); 
     

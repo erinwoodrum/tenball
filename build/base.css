@@ -18,6 +18,7 @@ html{ height: 100%; }
 .shadow-light-blue{box-shadow: 0 1px 3px #00aaef;}
 .text-dark{color:#212121;}
 .centered{text-align:center;}
+.toTheRight{float: right;}
 .link{font-weight:bold; text-decoration: underline; color: #00aaef; cursor: pointer;}
 .message {     background: white;
     max-width: 550px;
