@@ -1,0 +1,35 @@
+<link rel="stylesheet" type="text/css" href="/src/templates/pages/admin/admin.css">
+<section>
+<h2 class="center">Tournaments</h2>
+	<h3>Create New</h3>
+	<label>Table Size</label>
+	<select id="tourneyTableSize">
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="any">any</option>
+	</select><br>
+	<label>Open Immediately?</label>
+	<input type="radio" name="openImmediately" value="yes" checked> Yes <input type="radio" name="openImmediately" value="no"> No<br>
+	<label>Date to open (if not open now)</label>
+	<input type="date" id="openingDate" placeholder="mm/dd/yyyy" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}"/><br>
+	<label>Date to close</label>
+	<input type="date" id="closingDate" placeholder="mm/dd/yyyy" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}"/><br>
+	<button onclick="newTourney()">Create New</button>
+	<br>
+	<br>
+	<h3>All Tourneys</h3>
+	<div id="allTourneys"></div>
+	<br>
+	<br>
+</section>
+
+<section>
+<h2 class="center">Tickets Management</h2>
+	<h3>Give a ticket to a user</h3>
+	<select id="ticket-user"></select>
+	<button id="ticket-give-user" onclick="giveATicket()">Give a ticket!</button>
+//todo:  calculate current tickets out. <br>
+//todo:  tickets ever used.
+
+</section>
