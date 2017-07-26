@@ -46,6 +46,7 @@ _User.supplementLogin = function(user){
             _User.data.displayname = user.displayName || ''; 
             _User.data.phone = user.phoneNumber || ''; 
             _User.data.profile_picture = user.photoURL || ''; 
+            _User.data.uid = user.uid; 
             firebase.database().ref('/users/' +  user.uid).once('value').then(function(snapshot) {
                 console.log('snapshot', snapshot); 
                 var vals = snapshot.toJSON(); 
@@ -101,4 +102,16 @@ _User.addTicket = function(userid){
     }, function(fail){
         alert('failure:  ', fail); 
     }); 
-}
+}; 
+_User.removeTicket = function(userid){
+    if(!_Users[userid].tickets){
+        _Users[userid].tickets = 0; 
+    }
+    _Users[userid].tickets --; 
+    _User.data.tickets == _Users[userid].ticket; 
+    database.ref('users/' + userid).set(_Users[userid]).then(function(result){
+        alert('success!'); 
+    }, function(fail){
+        alert('failure:  ', fail); 
+    }); 
+}; 

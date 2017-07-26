@@ -16,12 +16,15 @@ function fillData(id, data){
 	document.getElementById(id).innerHTML = data;  
 }
 function createEntry(){
-	//new folder called entries
-	//create new key for this entry. 
-	//THEN! Allow the user to start adding to the entry. 
 	var entryKey = firebase.database().ref().child('entries').push().key;
-	//get the user ID. 
-	// and add the tourney
-	//Remove One ticket from user if successful. 
-	
+	var entryData = {
+		tourneyKey : tourneyKey, 
+		tableSize: tourney.tableSize, 
+		user: _User.data.uid
+	}; 
+	database.ref('entries/' + entryKey).set(entryData).then(function(){
+		_User.removeTicket(); 
+		fillData(currentTickets, _User.data.tickets); 
+		document.getElementById('createEntryBtn').addClass('disabled'); 
+	}); 
 }

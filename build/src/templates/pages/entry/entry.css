@@ -35,3 +35,7 @@
     border: none;
     cursor: pointer;
 }
+#createEntryBtn.disabled {
+	opacity: .6;
+	cursor: auto;
+}
